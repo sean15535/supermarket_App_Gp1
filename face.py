@@ -97,9 +97,15 @@ def generate_bill():
 root = Tk()
 root.title("Bokku Supermarket ")
 root.geometry('1280x720')
+# Create the main frame
+main_frame = Frame(root, bg='white')
+main_frame.pack(fill=BOTH, expand=True)
 
+# Create the title label
+title_label = Label(main_frame, text="Supermarket POS", bd=12, bg='#6A24FF', fg='white', font=('times new roman', 25, 'bold'), relief=GROOVE, justify=CENTER)
+title_label.pack(fill=X)
 # Left Frame
-left_frame = Frame(root, width=900, height=600, bg='steelblue')
+left_frame = Frame(root, width=900, height=600, bg='#6A24FF')
 left_frame.pack(side=LEFT)
 
 # Right Frame
