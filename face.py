@@ -95,11 +95,11 @@ def generate_bill():
 
 # Initialize the Tkinter window
 root = Tk()
-root.geometry('1800x620')
-
+root.title("Bokku Supermarket ")
+root.geometry('1280x720')
 
 # Left Frame
-left_frame = Frame(root, width=900, height=800, bg='steelblue')
+left_frame = Frame(root, width=900, height=600, bg='steelblue')
 left_frame.pack(side=LEFT)
 
 # Right Frame
@@ -110,7 +110,7 @@ right_frame.pack(side=RIGHT)
 heading = Label(left_frame, text="Market Square", font=('arial 40 bold'), bg='steelblue', fg='white')
 heading.place(x=15, y=0)
 
-datetime_label = Label(right, text="Today's Date: " + str(date) + " | Time: " + time_now, font=('arial 12 bold'), bg='white', fg='steelblue')
+datetime_label = Label(right_frame, text="Today's Date: " + str(date) + " | Time: " + time_now, font=('arial 12 bold'), bg='white', fg='steelblue')
 datetime_label.place(x=10, y=0)
 
 # Invoice Table
