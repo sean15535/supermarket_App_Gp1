@@ -3,23 +3,6 @@ import sqlite3
 import tkinter.messagebox
 import datetime
 
-# Initialize the Tkinter window
-root = Tk()
-root.geometry('1800x620')
-
-# Establish database connection
-conn = sqlite3.connect("Database\\store.db")
-c = conn.cursor()
-
-# Date
-date = datetime.datetime.now().date()
-
-# Temporary lists
-product_list = []
-product_price = []
-product_quantity = []
-product_id = []
-
 # Function to search for a product
 def find_product():
     get_id = enter_id_entry.get()
@@ -87,6 +70,23 @@ def generate_bill():
         sql = "UPDATE inventory SET stock=? WHERE id=?"
         c.execute(sql, (new_stock, product_id[i]))
         conn.commit()
+
+# Initialize the Tkinter window
+root = Tk()
+root.geometry('1800x620')
+
+# Establish database connection
+conn = sqlite3.connect("Database\\store.db")
+c = conn.cursor()
+
+# Date
+date = datetime.datetime.now().date()
+
+# Temporary lists
+product_list = []
+product_price = []
+product_quantity = []
+product_id = []
 
 # Left Frame
 left_frame = Frame(root, width=900, height=800, bg='steelblue')
