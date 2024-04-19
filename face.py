@@ -49,7 +49,7 @@ def find_product():
     add_to_cart_btn.place(x=395, y=420)
 
     # Generate bill and change button
-    change_l = Label(left_frame, text='Given Amount', font=("arial 18 bold"), bg='steelblue', fg='black')
+    change_l = Label(left_frame, text='Given Amount', font=("arial 18 bold"), bg='#6A24FF', fg='black')
     change_l.place(x=20, y=550)
     change_e = Entry(left_frame, width=25, font=("arial 18 bold"), bg='white')
     change_e.place(x=250, y=550)
@@ -105,11 +105,11 @@ main_frame.pack(fill=BOTH, expand=True)
 title_label = Label(main_frame, text="Supermarket POS", bd=12, bg='#6A24FF', fg='white', font=('times new roman', 25, 'bold'), relief=GROOVE, justify=CENTER)
 title_label.pack(fill=X)
 # Left Frame
-left_frame = Frame(root, width=900, height=600, bg='#6A24FF')
+left_frame = Frame(main_frame, width=630, height=500, bg='#6A24FF')
 left_frame.pack(side=LEFT)
 
 # Right Frame
-right_frame = Frame(root, width=700, height=800, bg='white')
+right_frame = Frame(main_frame, width=700, height=800, bg='white')
 right_frame.pack(side=RIGHT)
 
 datetime_label = Label(right_frame, text="Today's Date: " + str(date) + " | Time: " + time_now, font=('arial 12 bold'), bg='white', fg='steelblue')
@@ -119,25 +119,25 @@ datetime_label.place(x=10, y=0)
 tproduct = Label(right_frame, text="Products", font=('arial 14 bold'), bg='white', fg='black')
 tproduct.place(x=10, y=60)
 tquantity = Label(right_frame, text="Quantity", font=('arial 14 bold'), bg='white', fg='black')
-tquantity.place(x=310, y=60)
+tquantity.place(x=200, y=60)
 tamount = Label(right_frame, text="Amount", font=('arial 14 bold'), bg='white', fg='black')
-tamount.place(x=470, y=60)
+tamount.place(x=400, y=60)
 
 # Creating product Id label and box
-enter_id_label = Label(left_frame, text="Enter Product ID", font=('arial 14 bold'), fg='black', bg='steelblue')
+enter_id_label = Label(left_frame, text="Enter Product ID", font=('arial 14 bold'), fg='black', bg='#6A24FF')
 enter_id_label.place(x=20, y=80)
-enter_id_entry = Entry(left_frame, width=25, font=('arial 14 bold'), bg='white')
+enter_id_entry = Entry(left_frame, width=2, font=('arial 14 bold'), bg='white', bd=7)
 enter_id_entry.place(x=300, y=80)
 enter_id_entry.focus()
 
 # Search Button
-search_btn = Button(left_frame, width=25, text='Search', height=2, bg='#008B8B', command=find_product)
+search_btn = Button(left_frame, width=25, text='Search', height=2, bg='lime', command=find_product)
 search_btn.place(x=445, y=120)
 
 # Items to appear once the search button is clicked
-product_name_label = Label(left_frame, text="", font=('arial 24 bold'), bg='steelblue', fg='white')
+product_name_label = Label(left_frame, text="", font=('arial 24 bold'), bg='#6A24FF', fg='white')
 product_name_label.place(x=20, y=250)
-product_price_label = Label(left_frame, text="", font=('arial 24 bold'), bg='steelblue', fg='white')
+product_price_label = Label(left_frame, text="", font=('arial 24 bold'), bg='#6A24FF', fg='white')
 product_price_label.place(x=20, y=290)
 
 # Quantity Entry
