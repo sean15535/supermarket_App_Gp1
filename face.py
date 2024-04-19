@@ -7,14 +7,23 @@ import datetime
 conn = sqlite3.connect("Database\\store.db")
 c = conn.cursor()
 
-# Date
+# date
 date = datetime.datetime.now().date()
+time_now = datetime.datetime.now().strftime("%H:%M:%S")  # Format the time as HH:MM:SS
 
 # Temporary lists
 product_list = []
 product_price = []
 product_quantity = []
 product_id = []
+
+#function for the time
+def update_clock():
+    now = datetime.datetime.now()
+    time_now = now.strftime("%H:%M:%S")
+    date_now = now.strftime("%Y-%m-%d")
+    datetime_label.config(text="Today's Date: " + date_now + " | Time: " + time_now)
+    root.after(1000, update_clock)  # Update every 1000 milliseconds (1 second)
 
 # Function to search for a product
 def find_product():
@@ -100,8 +109,9 @@ right_frame.pack(side=RIGHT)
 # App name and date
 heading = Label(left_frame, text="Market Square", font=('arial 40 bold'), bg='steelblue', fg='white')
 heading.place(x=15, y=0)
-date_label = Label(right_frame, text="Today's Date: " + str(date), font=('arial 12 bold'), bg='white', fg='steelblue')
-date_label.place(x=10, y=0)
+
+datetime_label = Label(right, text="Today's Date: " + str(date) + " | Time: " + time_now, font=('arial 12 bold'), bg='white', fg='steelblue')
+datetime_label.place(x=10, y=0)
 
 # Invoice Table
 tproduct = Label(right_frame, text="Products", font=('arial 18 bold'), bg='white', fg='black')
@@ -138,4 +148,5 @@ quantity_e.place(x=250, y=370)
 total_label = Label(right_frame, text='', font=('arial 30 bold'), bg='white', fg='black')
 total_label.place(x=10, y=600)
 
+update_clock()  # Start the clock update
 root.mainloop()
