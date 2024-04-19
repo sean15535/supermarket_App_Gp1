@@ -112,25 +112,21 @@ left_frame.pack(side=LEFT)
 right_frame = Frame(root, width=700, height=800, bg='white')
 right_frame.pack(side=RIGHT)
 
-# App name and date
-heading = Label(left_frame, text="Market Square", font=('arial 40 bold'), bg='steelblue', fg='white')
-heading.place(x=15, y=0)
-
 datetime_label = Label(right_frame, text="Today's Date: " + str(date) + " | Time: " + time_now, font=('arial 12 bold'), bg='white', fg='steelblue')
 datetime_label.place(x=10, y=0)
 
 # Invoice Table
-tproduct = Label(right_frame, text="Products", font=('arial 18 bold'), bg='white', fg='black')
+tproduct = Label(right_frame, text="Products", font=('arial 14 bold'), bg='white', fg='black')
 tproduct.place(x=10, y=60)
-tquantity = Label(right_frame, text="Quantity", font=('arial 18 bold'), bg='white', fg='black')
+tquantity = Label(right_frame, text="Quantity", font=('arial 14 bold'), bg='white', fg='black')
 tquantity.place(x=310, y=60)
-tamount = Label(right_frame, text="Amount", font=('arial 18 bold'), bg='white', fg='black')
+tamount = Label(right_frame, text="Amount", font=('arial 14 bold'), bg='white', fg='black')
 tamount.place(x=470, y=60)
 
 # Creating product Id label and box
-enter_id_label = Label(left_frame, text="Enter Product ID", font=('arial 18 bold'), fg='black', bg='steelblue')
+enter_id_label = Label(left_frame, text="Enter Product ID", font=('arial 14 bold'), fg='black', bg='steelblue')
 enter_id_label.place(x=20, y=80)
-enter_id_entry = Entry(left_frame, width=25, font=('arial 18 bold'), bg='white')
+enter_id_entry = Entry(left_frame, width=25, font=('arial 14 bold'), bg='white')
 enter_id_entry.place(x=300, y=80)
 enter_id_entry.focus()
 
@@ -139,15 +135,15 @@ search_btn = Button(left_frame, width=25, text='Search', height=2, bg='#008B8B',
 search_btn.place(x=445, y=120)
 
 # Items to appear once the search button is clicked
-product_name_label = Label(left_frame, text="", font=('arial 25 bold'), bg='steelblue', fg='white')
+product_name_label = Label(left_frame, text="", font=('arial 24 bold'), bg='steelblue', fg='white')
 product_name_label.place(x=20, y=250)
-product_price_label = Label(left_frame, text="", font=('arial 25 bold'), bg='steelblue', fg='white')
+product_price_label = Label(left_frame, text="", font=('arial 24 bold'), bg='steelblue', fg='white')
 product_price_label.place(x=20, y=290)
 
 # Quantity Entry
-quantity_l = Label(left_frame, text='Enter Quantity', font=("arial 18 bold"), bg='steelblue', fg='black')
+quantity_l = Label(left_frame, text='Enter Quantity', font=("arial 14 bold"), bg='#6A24FF', fg='black')
 quantity_l.place(x=20, y=370)
-quantity_e = Entry(left_frame, width=25, font=("arial 18 bold"), bg='white')
+quantity_e = Entry(left_frame, width=25, font=("arial 14 bold"), bg='white')
 quantity_e.place(x=250, y=370)
 
 # Total Label
