@@ -35,8 +35,8 @@ def login_window():
     loginw.mainloop()
 
 def login_del():
-    if messagebox.askyesno("Quit", " Leave application?"):
-        exit(0)
+    if messagebox.askyesno("Quit", "Leave Application?"):
+        exit()
 
 def logintable():
     base = sqlite3.connect("login.db")
