@@ -13,7 +13,6 @@ FG = "#000000"
 NAV_COLOR = 'white'
 NAV_TEXT_COLOR = '#000000'
 
-
 def user_mainmenu(main_window, NAV_COLOR, NAV_TEXT_COLOR, builditemtable, make_invoice):
     mainframe = Canvas(main_window, bg=NAV_COLOR, highlightthickness=1)
     mainframe.grid(column=0, row=1, columnspan=1, rowspan=15)
@@ -173,7 +172,7 @@ def user_input(cur, transid, qty, additem, total, entryframe, tableframe1, entry
 
     Button(entryframe, text="Proceed", command=transtableadd, bd=10, width=8, height=7, bg="#FFFFFF",
            font="roboto 10").place(x=0, y=30)
-    Button(entryframe, text="Add to cart", command=addtotrans, bd=10, width=10, height=3, bg="#FFFFFF",
+    Button(entryframe, text="Add to cart", command=add_to_transaction, bd=10, width=10, height=3, bg="#FFFFFF",
            font="roboto 10").place(x=100, y=80)
     Button(entryframe, text="Remove", command=removecart, bd=10, width=10, height=3, bg="#FFFFFF",
            font="roboto 10").place(x=210, y=80)
@@ -384,8 +383,6 @@ def clicktranstable(tree, cur, cartitemid, cartitem, cur_execute, id_qty, cartit
 
 
 if __name__ == "__main__":
-    from tkinter import Tk
-    import sqlite3
 
     # Create Tkinter window
     root = Tk()
@@ -396,7 +393,7 @@ if __name__ == "__main__":
     base = cur.cursor()
 
  # Call user_mainmenu function with the correct parameters
-    user_mainmenu(root, NAV_COLOR, NAV_TEXT_COLOR, builditemtable, make_invoice)
+    mainframe = user_mainmenu(root, NAV_COLOR, NAV_TEXT_COLOR, builditemtable, make_invoice)
 
     # Start Tkinter event loop
     root.mainloop()
